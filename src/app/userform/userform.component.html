@@ -1,12 +1,18 @@
 <h2>{{title}}</h2>
-<input [(ngModel)]='user.firstname'>
+<input [(ngModel)]='user.name'>
+<input [(ngModel)]='user.mobileNumber'>
+<input [(ngModel)]='user.email'>
+<input [(ngModel)]='user.dob'>
 <input [(ngModel)]='user.age'>
 <button (click)='save()'>save</button>
 
 <table>
-  <thead><td>FirstName</td><td>Age</td></thead>
+  <thead><td>FirstName</td><td>Mobile</td><td>DOB</td><td>Age</td></thead>
   <tr *ngFor='let user of userArray'>
-    <td>{{user.firstname}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.mobileNumber}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.dob}}</td>
     <td>{{user.age}}</td>
   </tr>
 </table>

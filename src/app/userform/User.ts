@@ -1,4 +1,7 @@
 export class User{
-  firstname:string='Ram';
+  name:string='Ram';
+  mobileNumber: number=0;
+  email:string='@gmail.com';
+  dob: Date=new Date();
   age:number=20;
 }
