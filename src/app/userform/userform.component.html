@@ -3,16 +3,15 @@
 <input [(ngModel)]='user.mobileNumber'>
 <input [(ngModel)]='user.email'>
 <input type="date" [(ngModel)]='user.dob'>
-<input [(ngModel)]='user.age'>
 <button (click)='save()'>save</button>
 
 <table>
-  <thead><td>FirstName</td><td>Mobile</td><td>DOB</td><td>Age</td></thead>
-  <tr *ngFor='let user of userArray'>
+  <thead><td>FirstName</td><td>Mobile</td><td>email</td><td>DOB</td></thead>
+  <tr *ngFor='let user of userArray; index as i'>
     <td>{{user.name}}</td>
     <td>{{user.mobileNumber}}</td>
     <td>{{user.email}}</td>
-    <td>{{user.dob}}</td>
-    <td>{{user.age}}</td>
+    <td>{{user.dob | date: 'MM/dd/yyyy'}}</td>
+    <td><button (click)='this.deleteUser(user.id, i)'>x</button></td>
   </tr>
 </table>
